@@ -47,24 +47,24 @@ def AddFieldDistance():
     selectedFeature = GetFeatureByName()
     for feature in layer:
         if selectedFeature.GetGeometryRef().Distance(feature.GetGeometryRef()) < 1:
-            feature.SetField("distance", 1)
+            feature.SetField("Distance", 1)
         else:
-            feature.SetField("distance", 0)
-        layer.setFeature(feature)
+            feature.SetField("Distance", 0)
+        layer.SetFeature(feature)
 
 def AddFieldNeighbors(feature):
     countNeighbors = 0
     for f in layer:
         if feature.GetGeometryRef().Touches(f.GetGeometryRef()):
             countNeighbors += 1
-    return countNeighbors
+    feature.SetField("Neighbors", countNeighbors)
+    layer.SetFeature(feature)
 
 def AddNewField():
     # AddFieldDistance()
     for feature in layer:
-        print(feature.GetField("NAME_2"))
-        countNeighbors = AddFieldNeighbors(feature)
-        print("countNeighbors",countNeighbors)
+        AddFieldNeighbors(feature)
+        print("feature",feature.ExportToJson())
 
 AddNewField()
 # ג

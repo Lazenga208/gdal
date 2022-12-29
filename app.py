@@ -1,4 +1,4 @@
-# משימה 1
+# תרגיל 1 GDAL
 from osgeo import ogr
 
 path_to_shp_data = "shapeFilesData/AFG_adm2.shp"

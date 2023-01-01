@@ -1,5 +1,4 @@
 from osgeo import gdal
-
 #משימה א
 
 #a
@@ -31,6 +30,5 @@ def getTheBiggestRaster(raster1, raster2):
 print(getTheBiggestRaster('pictures/1.jpg', 'pictures/2.jpg'))
 print(getTheBiggestRaster('pictures/1.jpg', 'pictures/3.jpg'))
 print(getTheBiggestRaster('pictures/3.jpg', 'pictures/2.jpg'))
-
 
 #b
